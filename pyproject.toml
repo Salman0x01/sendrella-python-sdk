@@ -1,23 +1,30 @@
-[tool.poetry]
+[project]
 name = "sendrella"
-version = "0.1.0"
+version = "0.1.1"
 description = "Official Python SDK for the Sendrella API – email validation, bounce checking, and disposable detection."
-authors = ["Salman Khan <salman@sendrella.com>"]
-license = "MIT"
 readme = "README.md"
-homepage = "https://sendrella.com"
-repository = "https://github.com/salman0x01/sendrella-python-sdk"
+license = { text = "MIT" }
+authors = [
+  { name = "Salman Khan", email = "salman@sendrella.com" }
+]
 keywords = ["email", "validation", "sdk", "bounce", "api", "sendrella"]
+requires-python = ">=3.7"
 
-packages = [
-    { include = "sendrella" }
+dependencies = [
+  "requests>=2.31.0"
 ]
 
-[tool.poetry.dependencies]
-python = "^3.7"
-requests = "^2.31.0"
+[project.urls]
+Homepage = "https://sendrella.com"
+Repository = "https://github.com/Salman0x01/sendrella-python-sdk"
+Documentation = "https://swagger.sendrella.com"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry]
+packages = [
+  { include = "sendrella" }
+]
+
+[tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
 
 [build-system]

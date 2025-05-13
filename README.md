@@ -2,7 +2,7 @@
 
 The official Python SDK for [Sendrella](https://sendrella.com) — a modern infrastructure for secure and intelligent email communication.
 
-It enables effortless integration with the Sendrella API to perform:
+Effortlessly integrate the Sendrella API into your Python apps for:
 
 - ✉️ Email bounce checks  
 - 🛡️ Disposable (temporary) email detection  
@@ -13,18 +13,37 @@ It enables effortless integration with the Sendrella API to perform:
 
 ## 📦 Installation
 
-Install directly via Git:
+### 🔗 Install via PyPI (recommended):
 
 ```bash
-pip install git+https://github.com/yourusername/sendrella-python-sdk.git
+pip install sendrella
 ```
 
-Or clone this repo and install locally:
+### 🧪 Development (local or GitHub):
 
 ```bash
-git clone https://github.com/yourusername/sendrella-python-sdk.git
+pip install git+https://github.com/Salman0x01/sendrella-python-sdk.git
+```
+
+Or clone and install locally:
+
+```bash
+git clone https://github.com/Salman0x01/sendrella-python-sdk.git
 cd sendrella-python-sdk
 pip install .
+```
+
+---
+
+## 🚀 Quick Start
+
+```python
+from sendrella import SendrellaClient
+
+client = SendrellaClient(api_key="your_api_key_here")
+
+result = client.bounce.check("hello@example.com")
+print(result["status"])
 ```
 
 ---
@@ -36,7 +55,7 @@ Every API call requires a valid Sendrella API key.
 ### 🔐 Get your key:
 1. Log in to [Sendrella Dashboard](https://sendrella.com/dashboard)
 2. Copy your API key
-3. Use it in the SDK like this:
+3. Use it like this:
 
 ```python
 from sendrella import SendrellaClient
@@ -46,7 +65,7 @@ client = SendrellaClient(api_key="your_api_key_here")
 
 ---
 
-## 🚀 Usage Examples
+## 🧠 Usage Examples
 
 ### 📬 Check Email Bounce
 
@@ -135,14 +154,14 @@ export SENDRELLA_API_KEY=your_api_key_here  # Linux/macOS
 
 ## 📚 Supported Endpoints
 
-| Feature           | Method                      | Path                        |
-|------------------|-----------------------------|-----------------------------|
-| Bounce Check      | `client.bounce.check()`     | `/bounce/check`             |
-| Bounce Logs       | `client.bounce.logs()`      | `/bounce/logs`              |
-| Disposable Check  | `client.temp_mail.check()`  | `/tempmail/check`           |
-| Temp Logs         | `client.temp_mail.logs()`   | `/tempmail/logs`            |
-| Get Credits       | `client.utils.credits()`    | `/utils/credits`            |
-| Validate API Key  | `client.utils.validate_key()`| `/token/validate`           |
+| Feature           | Method                        | Path                     |
+|------------------|-------------------------------|--------------------------|
+| Bounce Check     | `client.bounce.check()`       | `/bounce/check`          |
+| Bounce Logs      | `client.bounce.logs()`        | `/bounce/logs`           |
+| Disposable Check | `client.temp_mail.check()`    | `/tempmail/check`        |
+| Temp Logs        | `client.temp_mail.logs()`     | `/tempmail/logs`         |
+| Get Credits      | `client.utils.credits()`      | `/utils/credits`         |
+| Validate API Key | `client.utils.validate_key()` | `/token/validate`        |
 
 ---
 
@@ -172,7 +191,7 @@ except AuthenticationError:
 
 ## 📄 License
 
-MIT License © 2025 [Your Name or Company]
+MIT License © 2025 Salman Khan
 
 ---
 
@@ -187,4 +206,3 @@ PRs welcome! Please submit bug fixes, improvements, or new endpoints with test c
 - [Official Website](https://sendrella.com)
 - [API Docs](https://swagger.sendrella.com)
 - [Support](https://sendrella.com/contact)
-
